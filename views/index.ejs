@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image-Text-Reader</title>
+    
+</head>
+<body>
+    <header>Image Text Reader</header>
+    <form action="/" method="POST" enctype="multipart/form-data">
+    <input type="file" name="pic" id="uploadFile" accept=".jpg, .png, .jpeg" required>
+    <button type="submit" id ="submit" >Upload</button>
+    </form>
+</body>
+<script type="text/javascript">
+document.getElementById("uploadFile").addEventListener("input",checkFile)
+    function checkFile() {
+        var fileElement = document.getElementById("uploadFile");
+        var fileExtension = "";
+        if (fileElement.value.lastIndexOf(".") > 0) {
+            fileExtension = fileElement.value.substring(fileElement.value.lastIndexOf(".") + 1, fileElement.value.length);
+        }
+        if (fileExtension.toLowerCase() == "png" || 
+        fileExtension.toLowerCase() == "jpeg"||
+        fileExtension.toLowerCase() == "jpg") {
+            return true;
+        }
+        else {
+            alert("You must select a JPG,JPEG or PNG file for upload");
+            fileElement.value="";
+            return false;
+        }
+        
+    }
+</script>
+</html>
