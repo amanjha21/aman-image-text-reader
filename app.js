@@ -9,7 +9,7 @@ let fileName="";
 //storage setup using multer
 const storage = multer.diskStorage({
     destination: (req,file,cb)=>{
-       cb(null, "./uploads") 
+       cb(null, "./views") 
     },
     filename:(req, file, cb)=>{
 cb(null,file.originalname);
@@ -32,7 +32,7 @@ app.use(express.static('public'))
 //route for post req
 app.post('/',(req,res)=>{
 upload(req,res,err=>{
-fs.readFile(`./uploads/${req.file.originalname}`, (err, data)=>{
+fs.readFile(`./views/${req.file.originalname}`, (err, data)=>{
     if(err) return console.log('your error is',err);
     
     (async () => {
@@ -49,7 +49,7 @@ fs.readFile(`./uploads/${req.file.originalname}`, (err, data)=>{
         // console.log(curProgress.value);
         res.render('textToVoice',{text: textFetched})
         // fs.unlink(`./uploads/${fileName}`)
-        fs.unlink(`./uploads/${fileName}`, (err => { 
+        fs.unlink(`./views/${fileName}`, (err => { 
             if (err) console.log(err); 
             else { 
               console.log(`\nDeleted file: ${fileName}`); 
