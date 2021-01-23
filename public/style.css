@@ -1,0 +1,105 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;400;500&display=swap');
+
+*{
+    box-sizing: border-box;
+    border:none;
+    text-decoration: none;
+}
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Noto Sans SC', sans-serif;
+    background-color: #29292c;
+    color: #eee;
+}
+.container, form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading{
+font-size: 10vw;
+font-weight: 500;
+cursor: default;
+margin-bottom: 20px;
+
+}
+#submit{
+    background-color: rgb(59, 160, 255);
+    margin-top: 30px;
+    height:80px;
+    width:250px;
+    color:#eee;
+    font-size: 30px;
+    border-radius: 3px;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+}
+#submit:hover{
+    box-shadow: 5px 5px  #eee;
+    color:white;
+    background-color: rgb(43, 150, 250);
+}
+#uploadFile {
+    
+   display: none;
+  }
+  
+#uploadBox,#text{
+    height:30vh;
+    width:70vw;
+    margin-top:100px;
+    cursor: pointer;
+    background-color: #eee;
+    color:black;
+    position: relative;
+    margin-bottom: 5px;
+    border: none;
+      
+}
+#uploadBox{
+    font-size: 2vw;
+    color:#666;
+    text-align: center;
+    padding-top: 15vh;
+}
+
+#text{
+    resize: none;
+    cursor:text;
+}
+#uploadBox:hover{
+    background-color: #ccc;
+    color:#222;
+}
+
+
+#speed{
+    height:30px;
+    width:70vw;
+    text-align: center;
+    background-color: #444;
+    color:white;
+    font-weight: 800;
+    margin-top:10px;
+    margin-bottom: 15px;
+}
+.buttons{
+    width:50vw;
+    height:30px;
+    display:flex;
+    justify-content: space-around;
+}
+.buttons button{
+    width:150px;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: 0.1s ease-out;
+}
+.buttons button:hover{
+    box-shadow: 3px 3px   rgb(43, 150, 250);
+}
+

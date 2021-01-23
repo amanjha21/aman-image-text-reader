@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image-Text-Reader</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="heading">Image Text Reader</header>
+      <form action="/" method="POST" enctype="multipart/form-data">
+        <input
+          type="file"
+          name="pic"
+          id="uploadFile"
+          accept=".jpg, .png, .jpeg"
+          required
+        />
+        
+          <label for="uploadFile" id="uploadBox"
+            >Choose a file or Drag n Drop</label
+          >
+        
+        <button type="submit" id="submit" onclick="loader">Upload</button>
+      </form>
+      <div id="loader"></div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    document.getElementById("uploadFile").addEventListener("input", checkFile);
+    
+    let fileElement = document.getElementById("uploadFile");
+    function checkFile() {
+     
+      var fileExtension = "";
+
+      if (fileElement.value.lastIndexOf(".") > 0) {
+        fileExtension = fileElement.value.substring(
+          fileElement.value.lastIndexOf(".") + 1,
+          fileElement.value.length
+        );
+      }
+      if (
+        fileExtension.toLowerCase() == "png" ||
+        fileExtension.toLowerCase() == "jpeg" ||
+        fileExtension.toLowerCase() == "jpg"
+      ) {
+        document.getElementById(
+          "uploadBox"
+        ).innerHTML = fileElement.value.replace(/.*[\/\\]/, "");
+
+        // return true;
+      } else {
+        alert("You must select a JPG,JPEG or PNG file for upload");
+        fileElement.value = "";
+        // return false;
+      }
+      
+    }
+   function loader(){
+    let upld=document.getElementById('submit');
+    upld.style.backgroundColor='red';
+   }
+  </script>
+</html>
